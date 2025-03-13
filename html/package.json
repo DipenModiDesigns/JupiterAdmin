@@ -1,0 +1,23 @@
+{
+  "name": "jupiteradmin-html",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start": "npx tailwindcss -i ./assets/css/style.css -o ./assets/dist/style.css --watch",
+    "build": "npx tailwindcss -i ./assets/css/style.css -o ./assets/dist/style.css --minify"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "postcss-cli": "^11.0.0"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.4.20",
+    "chokidar-cli": "^3.0.0",
+    "cssnano": "^7.0.6",
+    "postcss": "^8.5.1",
+    "tailwindcss": "^3.4.17"
+  }
+}
