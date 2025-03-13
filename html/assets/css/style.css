@@ -6,6 +6,6 @@
 /* Here you can add your custom CSS */
 @layer base {
     body {
-        @apply bg-zinc-300;
+        @apply bg-zinc-400;
     }
 }
