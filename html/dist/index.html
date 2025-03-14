@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title> JupiterAdmin - HTML </title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="description" content="" />
+    <meta name="keywords" content="">
+    <meta name="SKYPE_TOOLBAR" content="SKYPE_TOOLBAR_PARSER_COMPATIBLE" />
+
+  <script type="module" crossorigin src="/assets/index.html-Ds3yfuqP.js"></script>
+  <link rel="stylesheet" crossorigin href="/assets/index-CFJATH2e.css">
+</head>
+<body x-data="{ sidebarOpen: true, darkMode: false }">
+    <!-- Sidebar -->
+    <aside :class="sidebarOpen ? 'w-64' : 'w-20'" class="h-screen bg-white dark:bg-gray-800 shadow-md fixed transition-all duration-300">
+        <nav class="p-4">
+            <button @click="sidebarOpen = !sidebarOpen" class="mb-4 p-2 bg-gray-200 dark:bg-gray-700 rounded">
+                Toggle Sidebar
+            </button>
+            <ul>
+                <li><a href="#" class="block py-2 px-4 hover:bg-gray-200 dark:hover:bg-gray-700">Dashboard</a></li>
+                <li><a href="#" class="block py-2 px-4 hover:bg-gray-200 dark:hover:bg-gray-700">Settings</a></li>
+            </ul>
+        </nav>
+    </aside>
+
+    <!-- Main Content -->
+    <main id="wrapper" :class="sidebarOpen ? 'ml-64' : 'ml-20'" class="p-6 transition-all duration-300">
+        <!-- header part -->
+        <header class="mainHeader bg-white dark:bg-gray-800 shadow p-4 mb-4 flex justify-between items-center">
+            <h1 class="text-2xl font-bold">Dashboard</h1>
+            <button @click="darkMode = !darkMode" class="p-2 bg-gray-200 dark:bg-gray-700 rounded">
+                Toggle Dark Mode
+            </button>
+        </header>
+
+        <section class="main-body">
+            <div class="container">
+                <h3 class="text-red-500">Main content here...</h3>
+            </div>
+        </section>
+    </main>
+
+    <footer class="mainFooter">
+        Hii
+    </footer>
+</body>
+</html>
