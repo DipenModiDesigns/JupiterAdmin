@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en" class="h-full">
+<head>
+    <meta charset="UTF-8">
+    <title>JupiterAdmin - Notifications</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="description" content="JupiterAdmin Notifications" />
+    <meta name="keywords" content="notifications, alerts, jupiter">
+    <meta name="SKYPE_TOOLBAR" content="SKYPE_TOOLBAR_PARSER_COMPATIBLE" />
+
+  <script type="module" crossorigin src="/assets/main-BgnEsPg1.js"></script>
+  <link rel="stylesheet" crossorigin href="/assets/main-FazAg60R.css">
+</head>
+<body x-data="{ sidebarOpen: true }" class="h-full bg-gray-100">
+    <!-- Sidebar -->
+    <aside :class="sidebarOpen ? 'w-64' : 'w-20'" class="h-screen bg-white shadow-lg fixed transition-all duration-300 z-50">
+        <div class="p-4 border-b border-gray-200">
+            <div class="flex items-center justify-between">
+                <h1 :class="sidebarOpen ? 'block' : 'hidden'" class="text-xl font-bold text-gray-800">JupiterAdmin</h1>
+                <button @click="sidebarOpen = !sidebarOpen" class="p-2 rounded-lg hover:bg-gray-100">
+                    <i :class="sidebarOpen ? 'bx-chevron-left' : 'bx-chevron-right'" class="bx text-2xl text-gray-600 transition-transform duration-300"></i>
+                </button>
+            </div>
+        </div>
+        <nav class="p-4">
+            <ul class="space-y-2">
+                <li>
+                    <a href="index.html" class="flex items-center p-3 text-gray-700 rounded-lg hover:bg-gray-100">
+                        <i class='bx bxs-dashboard text-xl'></i>
+                        <span :class="sidebarOpen ? 'ml-3' : 'hidden'" class="font-medium">Dashboard</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="users.html" class="flex items-center p-3 text-gray-700 rounded-lg hover:bg-gray-100">
+                        <i class='bx bxs-user-detail text-xl'></i>
+                        <span :class="sidebarOpen ? 'ml-3' : 'hidden'" class="font-medium">Users</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="products.html" class="flex items-center p-3 text-gray-700 rounded-lg hover:bg-gray-100">
+                        <i class='bx bxs-box text-xl'></i>
+                        <span :class="sidebarOpen ? 'ml-3' : 'hidden'" class="font-medium">Products</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="orders.html" class="flex items-center p-3 text-gray-700 rounded-lg hover:bg-gray-100">
+                        <i class='bx bxs-cart text-xl'></i>
+                        <span :class="sidebarOpen ? 'ml-3' : 'hidden'" class="font-medium">Orders</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="settings.html" class="flex items-center p-3 text-gray-700 rounded-lg hover:bg-gray-100">
+                        <i class='bx bxs-cog text-xl'></i>
+                        <span :class="sidebarOpen ? 'ml-3' : 'hidden'" class="font-medium">Settings</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="profile.html" class="flex items-center p-3 text-gray-700 rounded-lg hover:bg-gray-100">
+                        <i class='bx bxs-user text-xl'></i>
+                        <span :class="sidebarOpen ? 'ml-3' : 'hidden'" class="font-medium">Profile</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="notifications.html" class="flex items-center p-3 text-gray-700 rounded-lg hover:bg-gray-100">
+                        <i class='bx bxs-bell text-xl'></i>
+                        <span :class="sidebarOpen ? 'ml-3' : 'hidden'" class="font-medium">Notifications</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="help.html" class="flex items-center p-3 text-gray-700 rounded-lg hover:bg-gray-100">
+                        <i class='bx bxs-help-circle text-xl'></i>
+                        <span :class="sidebarOpen ? 'ml-3' : 'hidden'" class="font-medium">Help</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="login.html" class="flex items-center p-3 text-gray-700 rounded-lg hover:bg-gray-100">
+                        <i class='bx bxs-log-out text-xl'></i>
+                        <span :class="sidebarOpen ? 'ml-3' : 'hidden'" class="font-medium">Logout</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </aside>
+
+    <!-- Main Content -->
+    <div :class="sidebarOpen ? 'ml-64' : 'ml-20'" class="transition-all duration-300">
+        <!-- Header -->
+        <header class="bg-white shadow-sm">
+            <div class="flex items-center justify-between px-6 py-4">
+                <div class="flex items-center space-x-4">
+                    <button @click="sidebarOpen = !sidebarOpen" class="p-2 rounded-lg hover:bg-gray-100">
+                        <i class='bx bx-menu text-2xl text-gray-600'></i>
+                    </button>
+                    <h2 class="text-xl font-semibold text-gray-800">Notifications</h2>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <div class="relative" x-data="{ open: false }">
+                        <button @click="open = !open" class="flex items-center space-x-2 p-2 rounded-lg hover:bg-gray-100">
+                            <img src="https://ui-avatars.com/api/?name=John+Doe" alt="Profile" class="w-8 h-8 rounded-full">
+                            <span class="text-gray-700">John Doe</span>
+                            <i class='bx bx-chevron-down text-xl'></i>
+                        </button>
+                        <div x-show="open" @click.away="open = false" class="absolute right-0 mt-2 w-48 bg-white rounded-lg shadow-lg py-1">
+                            <a href="profile.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">
+                                <i class='bx bxs-user-circle mr-2'></i> Profile
+                            </a>
+                            <a href="settings.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">
+                                <i class='bx bxs-cog mr-2'></i> Settings
+                            </a>
+                            <a href="login.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">
+                                <i class='bx bxs-log-out mr-2'></i> Logout
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Notifications Content -->
+        <main class="p-6">
+            <!-- Page Header -->
+            <div class="flex justify-between items-center mb-6">
+                <div>
+                    <h1 class="text-2xl font-semibold text-gray-900">Notifications</h1>
+                    <p class="mt-1 text-sm text-gray-500">Stay updated with your latest notifications</p>
+                </div>
+                <div class="flex space-x-3">
+                    <button class="inline-flex items-center px-4 py-2 border border-gray-300 rounded-md shadow-sm text-sm font-medium text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">
+                        <i class='bx bx-check-double mr-2'></i> Mark All as Read
+                    </button>
+                    <button class="inline-flex items-center px-4 py-2 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-red-600 hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500">
+                        <i class='bx bx-trash mr-2'></i> Clear All
+                    </button>
+                </div>
+            </div>
+
+            <!-- Notifications List -->
+            <div class="bg-white rounded-lg shadow overflow-hidden">
+                <!-- Unread Notification -->
+                <div class="p-4 border-b border-gray-200 bg-blue-50">
+                    <div class="flex items-start">
+                        <div class="flex-shrink-0">
+                            <div class="p-2 bg-blue-100 rounded-full">
+                                <i class='bx bx-user-plus text-blue-600'></i>
+                            </div>
+                        </div>
+                        <div class="ml-4 flex-1">
+                            <div class="flex items-center justify-between">
+                                <p class="text-sm font-medium text-blue-900">New User Registration</p>
+                                <div class="ml-2 flex-shrink-0 flex">
+                                    <button class="text-blue-600 hover:text-blue-900">
+                                        <i class='bx bx-check text-xl'></i>
+                                    </button>
+                                </div>
+                            </div>
+                            <p class="mt-1 text-sm text-blue-700">John Smith has registered as a new user.</p>
+                            <p class="mt-1 text-xs text-blue-500">2 minutes ago</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Read Notification -->
+                <div class="p-4 border-b border-gray-200">
+                    <div class="flex items-start">
+                        <div class="flex-shrink-0">
+                            <div class="p-2 bg-gray-100 rounded-full">
+                                <i class='bx bx-cart-add text-gray-600'></i>
+                            </div>
+                        </div>
+                        <div class="ml-4 flex-1">
+                            <div class="flex items-center justify-between">
+                                <p class="text-sm font-medium text-gray-900">New Order Received</p>
+                                <div class="ml-2 flex-shrink-0 flex">
+                                    <button class="text-gray-400 hover:text-gray-500">
+                                        <i class='bx bx-check text-xl'></i>
+                                    </button>
+                                </div>
+                            </div>
+                            <p class="mt-1 text-sm text-gray-600">Order #12345 has been placed by Jane Doe.</p>
+                            <p class="mt-1 text-xs text-gray-500">15 minutes ago</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- System Notification -->
+                <div class="p-4 border-b border-gray-200 bg-yellow-50">
+                    <div class="flex items-start">
+                        <div class="flex-shrink-0">
+                            <div class="p-2 bg-yellow-100 rounded-full">
+                                <i class='bx bx-info-circle text-yellow-600'></i>
+                            </div>
+                        </div>
+                        <div class="ml-4 flex-1">
+                            <div class="flex items-center justify-between">
+                                <p class="text-sm font-medium text-yellow-900">System Update</p>
+                                <div class="ml-2 flex-shrink-0 flex">
+                                    <button class="text-yellow-600 hover:text-yellow-900">
+                                        <i class='bx bx-check text-xl'></i>
+                                    </button>
+                                </div>
+                            </div>
+                            <p class="mt-1 text-sm text-yellow-700">A new system update is available. Please update your dashboard.</p>
+                            <p class="mt-1 text-xs text-yellow-500">1 hour ago</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Warning Notification -->
+                <div class="p-4 border-b border-gray-200 bg-red-50">
+                    <div class="flex items-start">
+                        <div class="flex-shrink-0">
+                            <div class="p-2 bg-red-100 rounded-full">
+                                <i class='bx bx-error-circle text-red-600'></i>
+                            </div>
+                        </div>
+                        <div class="ml-4 flex-1">
+                            <div class="flex items-center justify-between">
+                                <p class="text-sm font-medium text-red-900">Low Stock Alert</p>
+                                <div class="ml-2 flex-shrink-0 flex">
+                                    <button class="text-red-600 hover:text-red-900">
+                                        <i class='bx bx-check text-xl'></i>
+                                    </button>
+                                </div>
+                            </div>
+                            <p class="mt-1 text-sm text-red-700">Product "Wireless Headphones" is running low on stock.</p>
+                            <p class="mt-1 text-xs text-red-500">2 hours ago</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Load More Button -->
+            <div class="mt-4 text-center">
+                <button class="inline-flex items-center px-4 py-2 border border-gray-300 rounded-md shadow-sm text-sm font-medium text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">
+                    <i class='bx bx-loader-alt mr-2'></i> Load More
+                </button>
+            </div>
+        </main>
+    </div>
+</body>
+</html> 

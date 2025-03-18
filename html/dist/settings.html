@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en" class="h-full">
+<head>
+    <meta charset="UTF-8">
+    <title>JupiterAdmin - Settings</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="description" content="JupiterAdmin Settings" />
+    <meta name="keywords" content="settings, admin, jupiter">
+    <meta name="SKYPE_TOOLBAR" content="SKYPE_TOOLBAR_PARSER_COMPATIBLE" />
+
+  <script type="module" crossorigin src="/assets/main-BgnEsPg1.js"></script>
+  <link rel="stylesheet" crossorigin href="/assets/main-FazAg60R.css">
+</head>
+<body x-data="{ sidebarOpen: true }" class="h-full bg-gray-100">
+    <!-- Sidebar -->
+    <aside :class="sidebarOpen ? 'w-64' : 'w-20'" class="h-screen bg-white shadow-lg fixed transition-all duration-300 z-50">
+        <div class="p-4 border-b border-gray-200">
+            <div class="flex items-center justify-between">
+                <h1 :class="sidebarOpen ? 'block' : 'hidden'" class="text-xl font-bold text-gray-800">JupiterAdmin</h1>
+                <button @click="sidebarOpen = !sidebarOpen" class="p-2 rounded-lg hover:bg-gray-100">
+                    <i :class="sidebarOpen ? 'bx-chevron-left' : 'bx-chevron-right'" class="bx text-2xl text-gray-600 transition-transform duration-300"></i>
+                </button>
+            </div>
+        </div>
+        <nav class="p-4">
+            <ul class="space-y-2">
+                <li>
+                    <a href="index.html" class="flex items-center p-3 text-gray-700 rounded-lg hover:bg-gray-100">
+                        <i class='bx bxs-dashboard text-xl'></i>
+                        <span :class="sidebarOpen ? 'ml-3' : 'hidden'" class="font-medium">Dashboard</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="users.html" class="flex items-center p-3 text-gray-700 rounded-lg hover:bg-gray-100">
+                        <i class='bx bxs-user-detail text-xl'></i>
+                        <span :class="sidebarOpen ? 'ml-3' : 'hidden'" class="font-medium">Users</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="products.html" class="flex items-center p-3 text-gray-700 rounded-lg hover:bg-gray-100">
+                        <i class='bx bxs-box text-xl'></i>
+                        <span :class="sidebarOpen ? 'ml-3' : 'hidden'" class="font-medium">Products</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="orders.html" class="flex items-center p-3 text-gray-700 rounded-lg hover:bg-gray-100">
+                        <i class='bx bxs-cart text-xl'></i>
+                        <span :class="sidebarOpen ? 'ml-3' : 'hidden'" class="font-medium">Orders</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="settings.html" class="flex items-center p-3 text-gray-700 rounded-lg hover:bg-gray-100">
+                        <i class='bx bxs-cog text-xl'></i>
+                        <span :class="sidebarOpen ? 'ml-3' : 'hidden'" class="font-medium">Settings</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="profile.html" class="flex items-center p-3 text-gray-700 rounded-lg hover:bg-gray-100">
+                        <i class='bx bxs-user text-xl'></i>
+                        <span :class="sidebarOpen ? 'ml-3' : 'hidden'" class="font-medium">Profile</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="notifications.html" class="flex items-center p-3 text-gray-700 rounded-lg hover:bg-gray-100">
+                        <i class='bx bxs-bell text-xl'></i>
+                        <span :class="sidebarOpen ? 'ml-3' : 'hidden'" class="font-medium">Notifications</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="help.html" class="flex items-center p-3 text-gray-700 rounded-lg hover:bg-gray-100">
+                        <i class='bx bxs-help-circle text-xl'></i>
+                        <span :class="sidebarOpen ? 'ml-3' : 'hidden'" class="font-medium">Help</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="login.html" class="flex items-center p-3 text-gray-700 rounded-lg hover:bg-gray-100">
+                        <i class='bx bxs-log-out text-xl'></i>
+                        <span :class="sidebarOpen ? 'ml-3' : 'hidden'" class="font-medium">Logout</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </aside>
+
+    <!-- Main Content -->
+    <div :class="sidebarOpen ? 'ml-64' : 'ml-20'" class="transition-all duration-300">
+        <!-- Header -->
+        <header class="bg-white shadow-sm">
+            <div class="flex items-center justify-between px-6 py-4">
+                <div class="flex items-center space-x-4">
+                    <button @click="sidebarOpen = !sidebarOpen" class="p-2 rounded-lg hover:bg-gray-100">
+                        <i class='bx bx-menu text-2xl text-gray-600'></i>
+                    </button>
+                    <h2 class="text-xl font-semibold text-gray-800">Settings</h2>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <div class="relative" x-data="{ open: false }">
+                        <button @click="open = !open" class="flex items-center space-x-2 p-2 rounded-lg hover:bg-gray-100">
+                            <img src="https://ui-avatars.com/api/?name=John+Doe" alt="Profile" class="w-8 h-8 rounded-full">
+                            <span class="text-gray-700">John Doe</span>
+                            <i class='bx bx-chevron-down text-xl'></i>
+                        </button>
+                        <div x-show="open" @click.away="open = false" class="absolute right-0 mt-2 w-48 bg-white rounded-lg shadow-lg py-1">
+                            <a href="profile.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">
+                                <i class='bx bxs-user-circle mr-2'></i> Profile
+                            </a>
+                            <a href="settings.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">
+                                <i class='bx bxs-cog mr-2'></i> Settings
+                            </a>
+                            <a href="login.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">
+                                <i class='bx bxs-log-out mr-2'></i> Logout
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Settings Content -->
+        <main class="p-6">
+            <!-- Page Header -->
+            <div class="flex justify-between items-center mb-6">
+                <div>
+                    <h1 class="text-2xl font-semibold text-gray-900">Settings</h1>
+                    <p class="mt-1 text-sm text-gray-500">Manage your account settings and preferences</p>
+                </div>
+                <button class="inline-flex items-center px-4 py-2 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">
+                    <i class='bx bx-save mr-2'></i> Save Changes
+                </button>
+            </div>
+
+            <!-- Settings Sections -->
+            <div class="space-y-6">
+                <!-- General Settings -->
+                <div class="bg-white rounded-lg shadow p-6">
+                    <h2 class="text-lg font-medium text-gray-900 mb-4">General Settings</h2>
+                    <div class="space-y-4">
+                        <div>
+                            <label for="site_name" class="block text-sm font-medium text-gray-700">Site Name</label>
+                            <input type="text" name="site_name" id="site_name" class="mt-1 focus:ring-blue-500 focus:border-blue-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md" value="JupiterAdmin">
+                        </div>
+                        <div>
+                            <label for="site_description" class="block text-sm font-medium text-gray-700">Site Description</label>
+                            <textarea name="site_description" id="site_description" rows="3" class="mt-1 focus:ring-blue-500 focus:border-blue-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">Admin dashboard for managing your business</textarea>
+                        </div>
+                        <div>
+                            <label for="timezone" class="block text-sm font-medium text-gray-700">Timezone</label>
+                            <select id="timezone" name="timezone" class="mt-1 block w-full pl-3 pr-10 py-2 text-base border-gray-300 focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm rounded-md">
+                                <option>UTC</option>
+                                <option>EST</option>
+                                <option>PST</option>
+                                <option>GMT</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Email Settings -->
+                <div class="bg-white rounded-lg shadow p-6">
+                    <h2 class="text-lg font-medium text-gray-900 mb-4">Email Settings</h2>
+                    <div class="space-y-4">
+                        <div>
+                            <label for="smtp_host" class="block text-sm font-medium text-gray-700">SMTP Host</label>
+                            <input type="text" name="smtp_host" id="smtp_host" class="mt-1 focus:ring-blue-500 focus:border-blue-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md" value="smtp.example.com">
+                        </div>
+                        <div>
+                            <label for="smtp_port" class="block text-sm font-medium text-gray-700">SMTP Port</label>
+                            <input type="number" name="smtp_port" id="smtp_port" class="mt-1 focus:ring-blue-500 focus:border-blue-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md" value="587">
+                        </div>
+                        <div>
+                            <label for="smtp_username" class="block text-sm font-medium text-gray-700">SMTP Username</label>
+                            <input type="text" name="smtp_username" id="smtp_username" class="mt-1 focus:ring-blue-500 focus:border-blue-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md" value="noreply@example.com">
+                        </div>
+                        <div>
+                            <label for="smtp_password" class="block text-sm font-medium text-gray-700">SMTP Password</label>
+                            <input type="password" name="smtp_password" id="smtp_password" class="mt-1 focus:ring-blue-500 focus:border-blue-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md" value="••••••••">
+                        </div>
+                        <div>
+                            <label for="from_email" class="block text-sm font-medium text-gray-700">From Email</label>
+                            <input type="email" name="from_email" id="from_email" class="mt-1 focus:ring-blue-500 focus:border-blue-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md" value="noreply@example.com">
+                        </div>
+                        <div>
+                            <label for="from_name" class="block text-sm font-medium text-gray-700">From Name</label>
+                            <input type="text" name="from_name" id="from_name" class="mt-1 focus:ring-blue-500 focus:border-blue-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md" value="JupiterAdmin">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Notification Settings -->
+                <div class="bg-white rounded-lg shadow p-6">
+                    <h2 class="text-lg font-medium text-gray-900 mb-4">Notification Settings</h2>
+                    <div class="space-y-4">
+                        <div class="flex items-center justify-between">
+                            <div>
+                                <label class="text-sm font-medium text-gray-700">Email Notifications</label>
+                                <p class="text-sm text-gray-500">Receive email notifications for important updates</p>
+                            </div>
+                            <button type="button" class="relative inline-flex flex-shrink-0 h-6 w-11 border-2 border-transparent rounded-full cursor-pointer transition-colors ease-in-out duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 bg-blue-600" role="switch" aria-checked="true">
+                                <span class="sr-only">Use setting</span>
+                                <span class="translate-x-5 pointer-events-none relative inline-block h-5 w-5 rounded-full bg-white shadow transform ring-0 transition ease-in-out duration-200">
+                                    <span class="opacity-0 ease-in duration-200 absolute inset-0 h-full w-full flex items-center justify-center transition-opacity" aria-hidden="true">
+                                        <i class='bx bx-check text-blue-600'></i>
+                                    </span>
+                                    <span class="opacity-100 ease-out duration-200 absolute inset-0 h-full w-full flex items-center justify-center transition-opacity" aria-hidden="true">
+                                        <i class='bx bx-x text-gray-400'></i>
+                                    </span>
+                                </span>
+                            </button>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <div>
+                                <label class="text-sm font-medium text-gray-700">Push Notifications</label>
+                                <p class="text-sm text-gray-500">Receive push notifications in your browser</p>
+                            </div>
+                            <button type="button" class="relative inline-flex flex-shrink-0 h-6 w-11 border-2 border-transparent rounded-full cursor-pointer transition-colors ease-in-out duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 bg-gray-200" role="switch" aria-checked="false">
+                                <span class="sr-only">Use setting</span>
+                                <span class="translate-x-0 pointer-events-none relative inline-block h-5 w-5 rounded-full bg-white shadow transform ring-0 transition ease-in-out duration-200">
+                                    <span class="opacity-0 ease-in duration-200 absolute inset-0 h-full w-full flex items-center justify-center transition-opacity" aria-hidden="true">
+                                        <i class='bx bx-check text-blue-600'></i>
+                                    </span>
+                                    <span class="opacity-100 ease-out duration-200 absolute inset-0 h-full w-full flex items-center justify-center transition-opacity" aria-hidden="true">
+                                        <i class='bx bx-x text-gray-400'></i>
+                                    </span>
+                                </span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Security Settings -->
+                <div class="bg-white rounded-lg shadow p-6">
+                    <h2 class="text-lg font-medium text-gray-900 mb-4">Security Settings</h2>
+                    <div class="space-y-4">
+                        <div>
+                            <label for="current_password" class="block text-sm font-medium text-gray-700">Current Password</label>
+                            <input type="password" name="current_password" id="current_password" class="mt-1 focus:ring-blue-500 focus:border-blue-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md" value="••••••••">
+                        </div>
+                        <div>
+                            <label for="new_password" class="block text-sm font-medium text-gray-700">New Password</label>
+                            <input type="password" name="new_password" id="new_password" class="mt-1 focus:ring-blue-500 focus:border-blue-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md" value="••••••••">
+                        </div>
+                        <div>
+                            <label for="confirm_password" class="block text-sm font-medium text-gray-700">Confirm New Password</label>
+                            <input type="password" name="confirm_password" id="confirm_password" class="mt-1 focus:ring-blue-500 focus:border-blue-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md" value="••••••••">
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <div>
+                                <label class="text-sm font-medium text-gray-700">Two-Factor Authentication</label>
+                                <p class="text-sm text-gray-500">Add an extra layer of security to your account</p>
+                            </div>
+                            <button type="button" class="relative inline-flex flex-shrink-0 h-6 w-11 border-2 border-transparent rounded-full cursor-pointer transition-colors ease-in-out duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 bg-gray-200" role="switch" aria-checked="false">
+                                <span class="sr-only">Use setting</span>
+                                <span class="translate-x-0 pointer-events-none relative inline-block h-5 w-5 rounded-full bg-white shadow transform ring-0 transition ease-in-out duration-200">
+                                    <span class="opacity-0 ease-in duration-200 absolute inset-0 h-full w-full flex items-center justify-center transition-opacity" aria-hidden="true">
+                                        <i class='bx bx-check text-blue-600'></i>
+                                    </span>
+                                    <span class="opacity-100 ease-out duration-200 absolute inset-0 h-full w-full flex items-center justify-center transition-opacity" aria-hidden="true">
+                                        <i class='bx bx-x text-gray-400'></i>
+                                    </span>
+                                </span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+</body>
+</html> 

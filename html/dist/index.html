@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" class="h-full" :class="{ 'dark': darkMode }">
+<html lang="en" class="h-full">
 <head>
     <meta charset="UTF-8">
     <title>JupiterAdmin - Dashboard</title>
@@ -10,39 +10,74 @@
     <meta name="keywords" content="dashboard, admin, jupiter">
     <meta name="SKYPE_TOOLBAR" content="SKYPE_TOOLBAR_PARSER_COMPATIBLE" />
 
-  <script type="module" crossorigin src="/assets/index.html-Q9bKxAWR.js"></script>
-  <link rel="stylesheet" crossorigin href="/assets/index-CZnZWSL6.css">
+  <script type="module" crossorigin src="/assets/main-BgnEsPg1.js"></script>
+  <link rel="stylesheet" crossorigin href="/assets/main-FazAg60R.css">
 </head>
-<body x-data="{ sidebarOpen: true, darkMode: false }" class="h-full bg-gray-100 dark:bg-gray-900">
+<body x-data="{ sidebarOpen: true }" class="h-full bg-gray-100">
     <!-- Sidebar -->
-    <aside :class="sidebarOpen ? 'w-64' : 'w-20'" class="h-screen bg-white dark:bg-gray-800 shadow-lg fixed transition-all duration-300 z-50">
-        <div class="p-4 border-b border-gray-200 dark:border-gray-700">
+    <aside :class="sidebarOpen ? 'w-64' : 'w-20'" class="h-screen bg-white shadow-lg fixed transition-all duration-300 z-50">
+        <div class="p-4 border-b border-gray-200">
             <div class="flex items-center justify-between">
-                <h1 :class="sidebarOpen ? 'block' : 'hidden'" class="text-xl font-bold text-gray-800 dark:text-white">JupiterAdmin</h1>
-                <button @click="sidebarOpen = !sidebarOpen" class="p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700">
-                    <svg :class="sidebarOpen ? 'rotate-180' : ''" class="w-6 h-6 text-gray-600 dark:text-gray-300 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 19l-7-7 7-7m8 14l-7-7 7-7"></path>
-                    </svg>
+                <h1 :class="sidebarOpen ? 'block' : 'hidden'" class="text-xl font-bold text-gray-800">JupiterAdmin</h1>
+                <button @click="sidebarOpen = !sidebarOpen" class="p-2 rounded-lg hover:bg-gray-100">
+                    <i :class="sidebarOpen ? 'bx-chevron-left' : 'bx-chevron-right'" class="bx text-2xl text-gray-600 transition-transform duration-300"></i>
                 </button>
             </div>
         </div>
         <nav class="p-4">
             <ul class="space-y-2">
                 <li>
-                    <a href="#" class="flex items-center p-3 text-gray-700 dark:text-gray-300 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700">
-                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path>
-                        </svg>
+                    <a href="index.html" class="flex items-center p-3 text-gray-700 rounded-lg hover:bg-gray-100">
+                        <i class='bx bxs-dashboard text-xl'></i>
                         <span :class="sidebarOpen ? 'ml-3' : 'hidden'" class="font-medium">Dashboard</span>
                     </a>
                 </li>
                 <li>
-                    <a href="#" class="flex items-center p-3 text-gray-700 dark:text-gray-300 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700">
-                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"></path>
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
-                        </svg>
+                    <a href="users.html" class="flex items-center p-3 text-gray-700 rounded-lg hover:bg-gray-100">
+                        <i class='bx bxs-user-detail text-xl'></i>
+                        <span :class="sidebarOpen ? 'ml-3' : 'hidden'" class="font-medium">Users</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="products.html" class="flex items-center p-3 text-gray-700 rounded-lg hover:bg-gray-100">
+                        <i class='bx bxs-box text-xl'></i>
+                        <span :class="sidebarOpen ? 'ml-3' : 'hidden'" class="font-medium">Products</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="orders.html" class="flex items-center p-3 text-gray-700 rounded-lg hover:bg-gray-100">
+                        <i class='bx bxs-cart text-xl'></i>
+                        <span :class="sidebarOpen ? 'ml-3' : 'hidden'" class="font-medium">Orders</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="settings.html" class="flex items-center p-3 text-gray-700 rounded-lg hover:bg-gray-100">
+                        <i class='bx bxs-cog text-xl'></i>
                         <span :class="sidebarOpen ? 'ml-3' : 'hidden'" class="font-medium">Settings</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="profile.html" class="flex items-center p-3 text-gray-700 rounded-lg hover:bg-gray-100">
+                        <i class='bx bxs-user text-xl'></i>
+                        <span :class="sidebarOpen ? 'ml-3' : 'hidden'" class="font-medium">Profile</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="notifications.html" class="flex items-center p-3 text-gray-700 rounded-lg hover:bg-gray-100">
+                        <i class='bx bxs-bell text-xl'></i>
+                        <span :class="sidebarOpen ? 'ml-3' : 'hidden'" class="font-medium">Notifications</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="help.html" class="flex items-center p-3 text-gray-700 rounded-lg hover:bg-gray-100">
+                        <i class='bx bxs-help-circle text-xl'></i>
+                        <span :class="sidebarOpen ? 'ml-3' : 'hidden'" class="font-medium">Help</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="login.html" class="flex items-center p-3 text-gray-700 rounded-lg hover:bg-gray-100">
+                        <i class='bx bxs-log-out text-xl'></i>
+                        <span :class="sidebarOpen ? 'ml-3' : 'hidden'" class="font-medium">Logout</span>
                     </a>
                 </li>
             </ul>
@@ -50,56 +85,146 @@
     </aside>
 
     <!-- Main Content -->
-    <main :class="sidebarOpen ? 'ml-64' : 'ml-20'" class="p-6 transition-all duration-300">
+    <div :class="sidebarOpen ? 'ml-64' : 'ml-20'" class="transition-all duration-300">
         <!-- Header -->
-        <header class="bg-white dark:bg-gray-800 shadow-lg rounded-lg p-4 mb-6">
-            <div class="flex justify-between items-center">
-                <h1 class="text-2xl font-bold text-gray-800 dark:text-white">Dashboard Overview</h1>
+        <header class="bg-white shadow-sm">
+            <div class="flex items-center justify-between px-6 py-4">
                 <div class="flex items-center space-x-4">
-                    <button @click="darkMode = !darkMode" class="p-2 rounded-lg bg-gray-100 dark:bg-gray-700 hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors duration-200">
-                        <svg x-show="!darkMode" class="w-6 h-6 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path>
-                        </svg>
-                        <svg x-show="darkMode" class="w-6 h-6 text-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707"></path>
-                        </svg>
+                    <button @click="sidebarOpen = !sidebarOpen" class="p-2 rounded-lg hover:bg-gray-100">
+                        <i class='bx bx-menu text-2xl text-gray-600'></i>
                     </button>
+                    <h2 class="text-xl font-semibold text-gray-800">Dashboard</h2>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <div class="relative" x-data="{ open: false }">
+                        <button @click="open = !open" class="flex items-center space-x-2 p-2 rounded-lg hover:bg-gray-100">
+                            <img src="https://placehold.co/32x32" alt="Profile" class="w-8 h-8 rounded-full">
+                            <span class="text-gray-700">John Doe</span>
+                            <i class='bx bx-chevron-down text-xl'></i>
+                        </button>
+                        <div x-show="open" @click.away="open = false" class="absolute right-0 mt-2 w-48 bg-white rounded-lg shadow-lg py-1">
+                            <a href="profile.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">
+                                <i class='bx bxs-user-circle mr-2'></i> Profile
+                            </a>
+                            <a href="settings.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">
+                                <i class='bx bxs-cog mr-2'></i> Settings
+                            </a>
+                            <a href="login.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">
+                                <i class='bx bxs-log-out mr-2'></i> Logout
+                            </a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </header>
 
         <!-- Dashboard Content -->
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-6">
+        <main class="p-6">
             <!-- Stats Cards -->
-            <div class="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-6">
-                <div class="flex items-center">
-                    <div class="p-3 rounded-full bg-blue-100 dark:bg-blue-900">
-                        <svg class="w-6 h-6 text-blue-600 dark:text-blue-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"></path>
-                        </svg>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-6">
+                <div class="bg-white rounded-lg shadow p-6">
+                    <div class="flex items-center justify-between">
+                        <div>
+                            <p class="text-sm text-gray-500">Total Users</p>
+                            <h3 class="text-2xl font-bold text-gray-800">1,234</h3>
+                        </div>
+                        <div class="p-3 bg-blue-100 rounded-full">
+                            <i class='bx bxs-user-detail text-2xl text-blue-600'></i>
+                        </div>
                     </div>
-                    <div class="ml-4">
-                        <p class="text-sm font-medium text-gray-600 dark:text-gray-400">Total Users</p>
-                        <p class="text-lg font-semibold text-gray-800 dark:text-white">1,234</p>
+                </div>
+                <div class="bg-white rounded-lg shadow p-6">
+                    <div class="flex items-center justify-between">
+                        <div>
+                            <p class="text-sm text-gray-500">Revenue</p>
+                            <h3 class="text-2xl font-bold text-gray-800">$12,345</h3>
+                        </div>
+                        <div class="p-3 bg-green-100 rounded-full">
+                            <i class='bx bxs-dollar-circle text-2xl text-green-600'></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-white rounded-lg shadow p-6">
+                    <div class="flex items-center justify-between">
+                        <div>
+                            <p class="text-sm text-gray-500">Orders</p>
+                            <h3 class="text-2xl font-bold text-gray-800">456</h3>
+                        </div>
+                        <div class="p-3 bg-yellow-100 rounded-full">
+                            <i class='bx bxs-cart text-2xl text-yellow-600'></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-white rounded-lg shadow p-6">
+                    <div class="flex items-center justify-between">
+                        <div>
+                            <p class="text-sm text-gray-500">Messages</p>
+                            <h3 class="text-2xl font-bold text-gray-800">89</h3>
+                        </div>
+                        <div class="p-3 bg-purple-100 rounded-full">
+                            <i class='bx bxs-message-dots text-2xl text-purple-600'></i>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
 
-        <!-- Main Content Area -->
-        <div class="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-6">
-            <h2 class="text-xl font-semibold text-gray-800 dark:text-white mb-4">Recent Activity</h2>
-            <div class="space-y-4">
-                <p class="text-gray-600 dark:text-gray-300">Your dashboard content goes here...</p>
+            <!-- Charts -->
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-6">
+                <div class="bg-white rounded-lg shadow p-6">
+                    <div class="flex items-center justify-between mb-4">
+                        <h3 class="text-lg font-semibold text-gray-800">Revenue Overview</h3>
+                        <div class="flex items-center space-x-2">
+                            <button class="p-2 rounded-lg hover:bg-gray-100">
+                                <i class='bx bx-dots-horizontal-rounded text-xl text-gray-600'></i>
+                            </button>
+                        </div>
+                    </div>
+                    <canvas id="revenueChart" class="w-full h-64"></canvas>
+                </div>
+                <div class="bg-white rounded-lg shadow p-6">
+                    <div class="flex items-center justify-between mb-4">
+                        <h3 class="text-lg font-semibold text-gray-800">User Statistics</h3>
+                        <div class="flex items-center space-x-2">
+                            <button class="p-2 rounded-lg hover:bg-gray-100">
+                                <i class='bx bx-dots-horizontal-rounded text-xl text-gray-600'></i>
+                            </button>
+                        </div>
+                    </div>
+                    <canvas id="userChart" class="w-full h-64"></canvas>
+                </div>
             </div>
-        </div>
-    </main>
 
-    <!-- Footer -->
-    <footer class="fixed bottom-0 w-full bg-white dark:bg-gray-800 shadow-lg py-4">
-        <div class="container mx-auto px-4 text-center text-gray-600 dark:text-gray-400">
-            <p>&copy; 2024 JupiterAdmin. All rights reserved.</p>
-        </div>
-    </footer>
+            <!-- Recent Activity -->
+            <div class="bg-white rounded-lg shadow p-6">
+                <h3 class="text-lg font-semibold text-gray-900 mb-4">Recent Activity</h3>
+                <div class="space-y-4">
+                    <div class="flex items-center space-x-4">
+                        <img src="https://placehold.co/40x40" alt="User" class="w-10 h-10 rounded-full">
+                        <div class="flex-1">
+                            <p class="text-sm font-medium text-gray-900">John Doe</p>
+                            <p class="text-sm text-gray-500">Added a new product</p>
+                        </div>
+                        <span class="text-xs text-gray-500">2m ago</span>
+                    </div>
+                    <div class="flex items-center space-x-4">
+                        <img src="https://placehold.co/40x40" alt="User" class="w-10 h-10 rounded-full">
+                        <div class="flex-1">
+                            <p class="text-sm font-medium text-gray-900">Jane Smith</p>
+                            <p class="text-sm text-gray-500">Updated inventory</p>
+                        </div>
+                        <span class="text-xs text-gray-500">15m ago</span>
+                    </div>
+                    <div class="flex items-center space-x-4">
+                        <img src="https://placehold.co/40x40" alt="User" class="w-10 h-10 rounded-full">
+                        <div class="flex-1">
+                            <p class="text-sm font-medium text-gray-900">Mike Johnson</p>
+                            <p class="text-sm text-gray-500">Processed new order</p>
+                        </div>
+                        <span class="text-xs text-gray-500">1h ago</span>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
 </body>
 </html>
