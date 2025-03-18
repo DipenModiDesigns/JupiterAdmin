@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en" class="h-full">
+<head>
+    <meta charset="UTF-8">
+    <title>JupiterAdmin - Help</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="description" content="JupiterAdmin Help Center" />
+    <meta name="keywords" content="help, documentation, support, jupiter">
+    <meta name="SKYPE_TOOLBAR" content="SKYPE_TOOLBAR_PARSER_COMPATIBLE" />
+
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <script type="module" src="./assets/js/main.js"></script>
+</head>
+<body x-data="{ sidebarOpen: true }" class="h-full bg-gray-100">
+    <!-- Sidebar -->
+    <aside :class="sidebarOpen ? 'w-64' : 'w-20'" class="h-screen bg-white shadow-lg fixed transition-all duration-300 z-50">
+        <div class="p-4 border-b border-gray-200">
+            <div class="flex items-center justify-between">
+                <h1 :class="sidebarOpen ? 'block' : 'hidden'" class="text-xl font-bold text-gray-800">JupiterAdmin</h1>
+                <button @click="sidebarOpen = !sidebarOpen" class="p-2 rounded-lg hover:bg-gray-100">
+                    <i :class="sidebarOpen ? 'bx-chevron-left' : 'bx-chevron-right'" class="bx text-2xl text-gray-600 transition-transform duration-300"></i>
+                </button>
+            </div>
+        </div>
+        <nav class="p-4">
+            <ul class="space-y-2">
+                <li>
+                    <a href="index.html" class="flex items-center p-3 text-gray-700 rounded-lg hover:bg-gray-100">
+                        <i class='bx bxs-dashboard text-xl'></i>
+                        <span :class="sidebarOpen ? 'ml-3' : 'hidden'" class="font-medium">Dashboard</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="users.html" class="flex items-center p-3 text-gray-700 rounded-lg hover:bg-gray-100">
+                        <i class='bx bxs-user-detail text-xl'></i>
+                        <span :class="sidebarOpen ? 'ml-3' : 'hidden'" class="font-medium">Users</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="products.html" class="flex items-center p-3 text-gray-700 rounded-lg hover:bg-gray-100">
+                        <i class='bx bxs-box text-xl'></i>
+                        <span :class="sidebarOpen ? 'ml-3' : 'hidden'" class="font-medium">Products</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="orders.html" class="flex items-center p-3 text-gray-700 rounded-lg hover:bg-gray-100">
+                        <i class='bx bxs-cart text-xl'></i>
+                        <span :class="sidebarOpen ? 'ml-3' : 'hidden'" class="font-medium">Orders</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="settings.html" class="flex items-center p-3 text-gray-700 rounded-lg hover:bg-gray-100">
+                        <i class='bx bxs-cog text-xl'></i>
+                        <span :class="sidebarOpen ? 'ml-3' : 'hidden'" class="font-medium">Settings</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="profile.html" class="flex items-center p-3 text-gray-700 rounded-lg hover:bg-gray-100">
+                        <i class='bx bxs-user text-xl'></i>
+                        <span :class="sidebarOpen ? 'ml-3' : 'hidden'" class="font-medium">Profile</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="notifications.html" class="flex items-center p-3 text-gray-700 rounded-lg hover:bg-gray-100">
+                        <i class='bx bxs-bell text-xl'></i>
+                        <span :class="sidebarOpen ? 'ml-3' : 'hidden'" class="font-medium">Notifications</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="help.html" class="flex items-center p-3 text-gray-700 rounded-lg hover:bg-gray-100">
+                        <i class='bx bxs-help-circle text-xl'></i>
+                        <span :class="sidebarOpen ? 'ml-3' : 'hidden'" class="font-medium">Help</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="login.html" class="flex items-center p-3 text-gray-700 rounded-lg hover:bg-gray-100">
+                        <i class='bx bxs-log-out text-xl'></i>
+                        <span :class="sidebarOpen ? 'ml-3' : 'hidden'" class="font-medium">Logout</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </aside>
+
+    <!-- Main Content -->
+    <div :class="sidebarOpen ? 'ml-64' : 'ml-20'" class="transition-all duration-300">
+        <!-- Header -->
+        <header class="bg-white shadow-sm">
+            <div class="flex items-center justify-between px-6 py-4">
+                <div class="flex items-center space-x-4">
+                    <button @click="sidebarOpen = !sidebarOpen" class="p-2 rounded-lg hover:bg-gray-100">
+                        <i class='bx bx-menu text-2xl text-gray-600'></i>
+                    </button>
+                    <h2 class="text-xl font-semibold text-gray-800">Help Center</h2>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <div class="relative" x-data="{ open: false }">
+                        <button @click="open = !open" class="flex items-center space-x-2 p-2 rounded-lg hover:bg-gray-100">
+                            <img src="https://ui-avatars.com/api/?name=John+Doe" alt="Profile" class="w-8 h-8 rounded-full">
+                            <span class="text-gray-700">John Doe</span>
+                            <i class='bx bx-chevron-down text-xl'></i>
+                        </button>
+                        <div x-show="open" @click.away="open = false" class="absolute right-0 mt-2 w-48 bg-white rounded-lg shadow-lg py-1">
+                            <a href="profile.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">
+                                <i class='bx bxs-user-circle mr-2'></i> Profile
+                            </a>
+                            <a href="settings.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">
+                                <i class='bx bxs-cog mr-2'></i> Settings
+                            </a>
+                            <a href="login.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">
+                                <i class='bx bxs-log-out mr-2'></i> Logout
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Help Content -->
+        <main class="p-6">
+            <!-- Search Section -->
+            <div class="max-w-3xl mx-auto mb-8">
+                <div class="relative">
+                    <input type="text" placeholder="Search for help..." class="w-full px-4 py-3 pl-12 text-gray-700 bg-white border border-gray-300 rounded-lg focus:outline-none focus:border-blue-500">
+                    <i class='bx bx-search absolute left-4 top-3 text-gray-400 text-xl'></i>
+                </div>
+            </div>
+
+            <!-- Quick Links -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+                <a href="#getting-started" class="bg-white p-6 rounded-lg shadow hover:shadow-md transition-shadow">
+                    <div class="flex items-center mb-4">
+                        <div class="p-3 bg-blue-100 rounded-full">
+                            <i class='bx bx-rocket text-2xl text-blue-600'></i>
+                        </div>
+                        <h3 class="ml-4 text-lg font-semibold text-gray-900">Getting Started</h3>
+                    </div>
+                    <p class="text-gray-600">Learn the basics and get up to speed with JupiterAdmin</p>
+                </a>
+                <a href="#documentation" class="bg-white p-6 rounded-lg shadow hover:shadow-md transition-shadow">
+                    <div class="flex items-center mb-4">
+                        <div class="p-3 bg-green-100 rounded-full">
+                            <i class='bx bx-book-open text-2xl text-green-600'></i>
+                        </div>
+                        <h3 class="ml-4 text-lg font-semibold text-gray-900">Documentation</h3>
+                    </div>
+                    <p class="text-gray-600">Detailed guides and API documentation</p>
+                </a>
+                <a href="#support" class="bg-white p-6 rounded-lg shadow hover:shadow-md transition-shadow">
+                    <div class="flex items-center mb-4">
+                        <div class="p-3 bg-purple-100 rounded-full">
+                            <i class='bx bx-support text-2xl text-purple-600'></i>
+                        </div>
+                        <h3 class="ml-4 text-lg font-semibold text-gray-900">Support</h3>
+                    </div>
+                    <p class="text-gray-600">Get help from our support team</p>
+                </a>
+            </div>
+
+            <!-- FAQ Section -->
+            <div class="bg-white rounded-lg shadow p-6 mb-8">
+                <h2 class="text-2xl font-semibold text-gray-900 mb-6">Frequently Asked Questions</h2>
+                <div class="space-y-4">
+                    <div x-data="{ open: false }" class="border-b border-gray-200 pb-4">
+                        <button @click="open = !open" class="flex justify-between items-center w-full text-left">
+                            <span class="text-lg font-medium text-gray-900">How do I reset my password?</span>
+                            <i :class="open ? 'bx-chevron-up' : 'bx-chevron-down'" class='bx text-2xl text-gray-500'></i>
+                        </button>
+                        <div x-show="open" class="mt-4 text-gray-600">
+                            To reset your password, go to the login page and click on "Forgot Password". Enter your email address and follow the instructions sent to your inbox.
+                        </div>
+                    </div>
+                    <div x-data="{ open: false }" class="border-b border-gray-200 pb-4">
+                        <button @click="open = !open" class="flex justify-between items-center w-full text-left">
+                            <span class="text-lg font-medium text-gray-900">How do I add a new user?</span>
+                            <i :class="open ? 'bx-chevron-up' : 'bx-chevron-down'" class='bx text-2xl text-gray-500'></i>
+                        </button>
+                        <div x-show="open" class="mt-4 text-gray-600">
+                            Navigate to the Users page and click the "Add User" button. Fill in the required information and click "Save" to create a new user.
+                        </div>
+                    </div>
+                    <div x-data="{ open: false }" class="border-b border-gray-200 pb-4">
+                        <button @click="open = !open" class="flex justify-between items-center w-full text-left">
+                            <span class="text-lg font-medium text-gray-900">How do I manage orders?</span>
+                            <i :class="open ? 'bx-chevron-up' : 'bx-chevron-down'" class='bx text-2xl text-gray-500'></i>
+                        </button>
+                        <div x-show="open" class="mt-4 text-gray-600">
+                            Go to the Orders page to view all orders. You can filter, search, and update order statuses. Click on an order to view details and make changes.
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Contact Support -->
+            <div class="bg-white rounded-lg shadow p-6">
+                <h2 class="text-2xl font-semibold text-gray-900 mb-6">Need More Help?</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div>
+                        <h3 class="text-lg font-medium text-gray-900 mb-4">Contact Support</h3>
+                        <div class="space-y-4">
+                            <div class="flex items-center">
+                                <i class='bx bx-envelope text-2xl text-gray-400 mr-3'></i>
+                                <span class="text-gray-600">support@jupiteradmin.com</span>
+                            </div>
+                            <div class="flex items-center">
+                                <i class='bx bx-phone text-2xl text-gray-400 mr-3'></i>
+                                <span class="text-gray-600">+1 (555) 123-4567</span>
+                            </div>
+                            <div class="flex items-center">
+                                <i class='bx bx-time text-2xl text-gray-400 mr-3'></i>
+                                <span class="text-gray-600">Mon-Fri, 9am-5pm EST</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <h3 class="text-lg font-medium text-gray-900 mb-4">Submit a Ticket</h3>
+                        <form class="space-y-4">
+                            <div>
+                                <label for="subject" class="block text-sm font-medium text-gray-700">Subject</label>
+                                <input type="text" id="subject" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500">
+                            </div>
+                            <div>
+                                <label for="message" class="block text-sm font-medium text-gray-700">Message</label>
+                                <textarea id="message" rows="4" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500"></textarea>
+                            </div>
+                            <button type="submit" class="w-full inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">
+                                Submit Ticket
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+</body>
+</html> 

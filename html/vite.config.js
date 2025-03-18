@@ -23,5 +23,8 @@ export default {
             'chart.js': resolve(__dirname, 'node_modules/chart.js'),
             'boxicons': resolve(__dirname, 'node_modules/boxicons')
         }
+    },
+    optimizeDeps: {
+        include: ['boxicons']
     }
 };
