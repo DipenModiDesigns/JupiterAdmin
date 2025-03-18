@@ -17,4 +17,11 @@ export default {
             input,
         },
     },
+    resolve: {
+        alias: {
+            'alpinejs': resolve(__dirname, 'node_modules/alpinejs'),
+            'chart.js': resolve(__dirname, 'node_modules/chart.js'),
+            'boxicons': resolve(__dirname, 'node_modules/boxicons')
+        }
+    }
 };
